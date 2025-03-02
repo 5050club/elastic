@@ -1,0 +1,16 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: kb-5050club
+spec:
+  version: 8.16.0
+  count: 1
+  elasticsearchRef:
+    name: es-5050club
+  http:
+    service:
+      spec:
+        type: LoadBalancer
+#    tls:
+#      selfSignedCertificate:
+#        disabled: true
